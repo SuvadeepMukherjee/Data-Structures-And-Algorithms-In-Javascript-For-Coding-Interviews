@@ -42,3 +42,29 @@ A hash map  is extremely powerful and allows us to reduce the  time complexity o
 To summarize, a hash map is an unordered data structure that stores key-value pairs. A hash map can add and remove elements in O(1), as well as update values associated with a key and check if a key exists, also in O(1).When we iterate over the keys, values of a `Map`  they will be returned in the order in which they were inserted.
 
 > An ordered data structure is one where the insertion order is  "remembered". An unordered data structure is one where the insertion  order is not relevant.
+
+------
+
+### Comparison with arrays
+
+In terms of time complexity, hash maps blow arrays out of the water. The following operations are all O(1) for a hash map:
+
+- Add an element and associate it with a value
+- Delete an element if it exists
+- Check if an element exists
+
+A hash map also has many of the same useful properties as an array with the same time complexity:
+
+- Find length/number of elements
+- Updating values
+- Iterate over elements
+
+> Hash maps are also just easier/cleaner to work with. Even if your  keys are integers and you could get away with using an array, if you  don't know what the max size of your key is, then you don't know how  large you should size your array. With hash maps, you don't need to  worry about that, since the key will be converted to a new integer  within the size limit anyways.
+
+However, from a practical perspective, there are some disadvantages  to using hash maps, and it's important to know them as it is common in  interviews to talk about tradeoffs.
+
+The biggest disadvantage of hash maps is that for smaller input  sizes, they can be slower due to overhead. Because big O ignores  constants, the O(1) time complexity can sometimes be deceiving - it's usually something more like O(10) because every key needs to go through the hash function, and there can also be **collisions**, which we will talk about in the next section.
+
+Hash tables can also take up more space. Dynamic arrays are actually  fixed-size arrays that resize themselves when they go beyond their  capacity. Hash tables are also implemented using a fixed size array -  remember that the size is a limit set by the programmer. The problem is, resizing a hash table is much more expensive because every existing key needs to be re-hashed, and also a hash table may use an array that is  significantly larger than the number of elements stored, resulting in a  huge waste of space. Let's say you chose your limit as 10,000 items, but you only end up storing 10. Okay, you could argue that 10,000 is too  large, but then what if your next test case ends up needing to store  100,000 elements? The point is, when you don't know how many elements  you need to store, arrays are more flexible with resizing and not  wasting space.
+
+> Note: remember that time complexity functions only involve the variables you define. When we say that hash map operations are O(1), the variable we are concerned with is usually n, which is the size of the hash map. However, this may be misleading. For example, hashing a string requires O(m) time, where m is the length of the string. The constant time operations are only constant **relative to the size of the map**.
