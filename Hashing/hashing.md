@@ -1,7 +1,5 @@
 ## Hashing 
 
-Before we start this chapter, let's quickly talk about data structures.
-
 A data structure is a format for organizing data in an efficient way. We can split data structures into two things: the interface and the implementation.
 
 The interface is like a contract that specifies how we can interact with the data structure – what operations we can perform on it, what inputs it expects, and what outputs we can expect.
@@ -12,9 +10,7 @@ The implementation is the code that actually makes the data structure work. This
 
 For many data structures, the implementation can be quite complex, involving intricate algorithms and data manipulation. 
 
-In this article and a few others in the course, we will talk about  the underlying implementation details behind a data structure. While it  does help to have a basic understanding, don't worry too much about  memorizing these details. It is  included  for completeness.
-
-The more important thing is to understand the interface. All major  data structures have built-in implementations in javascript. In an interview, it is expected that we know how to use the  built-in data structures, but we wouldn't be asked to implement them  ourself.
+ All major  data structures have built-in implementations in javascript. In an interview, it is expected that we know how to use the  built-in data structures, but we wouldn't be asked to implement them  ourself.
 
 ------
 
@@ -27,7 +23,7 @@ A hash function is a function that takes an input and  deterministically convert
 3. Take that value, and multiply it by the current position in the string (index + 1). Add this to `total`. For example, given the string `"abc"`, the `b` is at position `2` in the alphabet and position `2` in the string, so it would contribute `2 * 2 = 4` towards `total`.
 4. After going through every character, `total % x` is the converted value.
 
-This algorithm isn't actually a good hash function but is just an  example of how one could convert strings into integers.  The final converted value will be in the range `[0, x - 1]`.
+This algorithm  is just an  example of how one could convert strings into integers.  The final converted value will be in the range `[0, x - 1]`.
 
 ------
 
