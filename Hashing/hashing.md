@@ -37,7 +37,7 @@ We know that arrays have O(1) random access. Given an arbitrary index, we can ac
 
 With arrays, we **map** indices to values. With hash maps, we map **keys** to values, and a key can be almost anything. 
 
-A hash map is probably the most important concept in all of algorithm interviewing. It is extremely powerful and allows us to reduce the  time complexity of an algorithm by a factor of O(n) for a huge amount of problems. Javascript has a [built-in implementation of a hash map](https://en.wikipedia.org/wiki/Hash_table#Implementations),  they're called `maps` and declaring one is as simple as `map =new Map()`. .
+A hash map  is extremely powerful and allows us to reduce the  time complexity of an algorithm by a factor of O(n) for a huge amount of problems. Javascript has a [built-in implementation of a hash map](https://en.wikipedia.org/wiki/Hash_table#Implementations),  they're called `maps` and declaring one is as simple as `map =new Map()`. .
 
 To summarize, a hash map is an unordered data structure that stores key-value pairs. A hash map can add and remove elements in O(1), as well as update values associated with a key and check if a key exists, also in O(1).When we iterate over the keys, values of a `Map`  they will be returned in the order in which they were inserted.
 
