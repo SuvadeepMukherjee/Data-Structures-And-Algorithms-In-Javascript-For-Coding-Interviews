@@ -50,6 +50,9 @@ When written, the function is wrapped by a capital O. Here are some example comp
 - O(log⁡n)
 - O(n⋅m)
 
-> You might be thinking, what is mm? Remember: we define the variables. As these are simply examples with no associated problem, m could denote any arbitrary variable. For example, we could have a problem where the input is two arrays. n could denote the length of one while m denotes the length of the other.
+> You might be thinking, what is m? Remember: we define the variables. As these are simply examples with no associated problem, m could denote any arbitrary variable. For example, we could have a problem where the input is two arrays. n could denote the length of one while m denotes the length of the other.
 
 These functions represent the complexity. For example, we would say  "The time complexity of my algorithm is O(n)" or "The space complexity  of my algorithm is O(n^2)".
+
+------
+
