@@ -240,13 +240,13 @@ This algorithm has a space complexity of O(n). The array `nums` stores the first
 ```js
 // Given integer arrays "arr" with length n and "arr2" with length m,
 
-const grid = []
+const grid = [];
 
-for (int i = 0; i < arr.length; i++) {
-  grid[i]=[]
-    for (int j = 0; j < arr2.length; j++) {
-        grid[i][j] = arr[i] * arr2[j]
-    }
+for (let i = 0; i < arr.length; i++) {
+  grid[i] = [];
+  for (let j = 0; j < arr2.length; j++) {
+    grid[i][j] = arr[i] * arr2[j];
+  }
 }
 ```
 
