@@ -44,3 +44,5 @@ fn(1);
 ```
 
 > After we call `fn(10)`, we print `10` and call `fn(11)`. In the `fn(11)` call, we trigger the base case and return. So now we are back in the call to `fn(10)` and move to the next line, which is the return statement. This makes us return back to the `fn(9)` call and so on, until we eventually return from the `fn(1)` call and the algorithm terminates.
+
+An important thing to understand about recursion is the order in which  the code runs - the order in which the computer executes instructions.  With an iterative program, it's easy - start at the top, and go line by  line. With recursion, it can get confusing because calls can cascade on  top of each other. Let's print numbers again, but this time only up to  3. Let's also add another print statement and number the lines:
