@@ -134,7 +134,7 @@ for (let num of arr) {
 }
 ```
 
-This algorithm has a time complexity of O(n2). In each inner for loop iteration, we are performing a multiplication and print, which both cost O(1). The inner for loop runs n times, which means each outer for loop iteration costs O(n). The outer for loop runs O(n) times, which gives a time complexity of O(n⋅n)=O(n^2).
+This algorithm has a time complexity of O(n^2). In each inner for loop iteration, we are performing a multiplication and print, which both cost O(1). The inner for loop runs n times, which means each outer for loop iteration costs O(n). The outer for loop runs O(n) times, which gives a time complexity of O(n⋅n)=O(n^2).
 
 ------
 
@@ -187,3 +187,66 @@ O(log⁡n) means that somewhere in your algorithm, the input is being reduced by
 
 ------
 
+### Analyzing space complexity
+
+When you initialize variables like arrays or strings, your algorithm  is allocating memory. We never count the space used by the input (it is  bad practice to modify the input), and usually don't count the space  used by the output (the answer) unless an interviewer asks us to.
+
+> In the below examples, the code is only allocating memory so that we  can analyze the space complexity, so we will consider everything we  allocate as part of the space complexity (there is no "answer").
+
+```js
+// Given an integer array "arr" with length n,
+
+for (let num of arr) {
+  console.log(num);
+}
+
+```
+
+This algorithm has a space complexity of O(1)O(1). The only space allocated is an integer variable `num`, which is constant relative to nn.
+
+------
+
+```js
+// Given an integer array "arr" with length n
+
+const doubledNums = [];
+
+for (let num of arr) {
+  doubledNums.push(num * 2);
+}
+
+```
+
+This algorithm has a space complexity of O(n). The array `doubledNums` stores n integers at the end of the algorithm.
+
+------
+
+```js
+// Given an integer array "arr" with length n
+
+const nums = [];
+let oneHundredth = n / 100;
+
+for (let i = 0; i < oneHundredth; i++) {
+  nums.push(arr[i]);
+}
+
+```
+
+This algorithm has a space complexity of O(n). The array `nums` stores the first 1% of numbers in `arr`. This gives a space complexity of O(n/100) = O(n).
+
+------
+
+```js
+// Given integer arrays "arr" with length n and "arr2" with length m,
+
+const grid = arr[n][m]
+
+for (int i = 0; i < arr.length; i++) {
+    for (int j = 0; j < arr2.length; j++) {
+        grid[i][j] = arr[i] * arr2[j]
+    }
+}
+```
+
+This algorithm has a space complexity of O(n⋅m). We are creating a `grid` that has dimensions n⋅m.
