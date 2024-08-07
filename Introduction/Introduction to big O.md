@@ -70,7 +70,7 @@ There are a few rules when it comes to calculating complexity. First, **we ignor
 
 When n=100, algorithm A uses 100 operations and algorithm B uses 500 operations. What happens if we double n? Then algorithm A uses 200 operations and algorithm B uses 1000 operations. As you can see, when we double the value of n, both algorithms require double the amount of operations. If we were to 10x the value of n, then both algorithms would require 10x more operations.
 
-Remember: the point of complexity is to analyze the algorithm **as the input changes**. We don't care that algorithm B is 5x slower than algorithm A. For both  algorithms, as the input size increases, the number of operations  required increases **linearly**. That's what we care about. Thus, both algorithms are O(n)O.
+Remember: the point of complexity is to analyze the algorithm **as the input changes**. We don't care that algorithm B is 5x slower than algorithm A. For both  algorithms, as the input size increases, the number of operations  required increases **linearly**. That's what we care about. Thus, both algorithms are O(n).
 
 The second rule is that we consider the complexity as the variables **tend to infinity**. When we have addition/subtraction between terms of the **same** variable, we ignore all terms except the most powerful one. For example, O(2^n+n^2−500n)=O(2^n). Why? Because as n tends to infinity, 2^n becomes so large that the other two terms are effectively zero in comparison.
 
@@ -86,4 +86,4 @@ When talking about complexity, there are normally three cases:
 - Average case
 - Worst case scenario
 
-In most algorithms, all three of these will be equal, but some  algorithms will have them differ. If you have to choose only one to  represent the algorithm's time or space complexity, never choose the  best case scenario. It is most correct to use the worst case scenario,  but you should be able to talk about the difference between the cases.
+In most algorithms, all three of these will be equal, but some  algorithms will have them differ. If you have to choose only one to  represent the algorithm's time or space complexity, never choose the  best case scenario. It is most correct to use the worst case scenario,  but we should be able to talk about the difference between the cases.
