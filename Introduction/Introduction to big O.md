@@ -4,7 +4,7 @@ An algorithm can be seen as a recipe for a computer to follow. It's a set of ins
 
 Algorithms take an input and produce an output. The output will be  the answer to a question regarding the input. For example, let's say we had a non-empty array of positive integers called `nums`, and we wanted to answer the question: "What is the largest number in `nums`?".
 
-To answer this question, you would write an algorithm that takes an array called `nums` as **input**, and **outputs** the largest number in `nums`. Here is an example of such an algorithm:
+To answer this question, we would write an algorithm that takes an array called `nums` as **input**, and **outputs** the largest number in `nums`. Here is an example of such an algorithm:
 
 1. Create a variable `maxNum` and initialize it to `0`.
 2. Iterate over each element `num` in `nums`.
