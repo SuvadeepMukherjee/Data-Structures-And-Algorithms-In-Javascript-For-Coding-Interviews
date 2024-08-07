@@ -82,3 +82,44 @@ As you can see, the line where we print text is executed in reverse order. The o
 > Every function call "exists" until it returns. When we move to a  different function call, the old one waits until the new one returns.  The order in which the calls happens is remembered, and the lines within the functions are executed in order.
 >
 > Note that each function call also has its own local scope. So in the example above, when we call `f(3)`, there are 3 "versions" of `i` simultaneously. The first call has `i = 1`, the second call has `i = 2`, and the third call has `i = 3`. Let's say that we were to do `i += 1` in the `f(3)` call. Then `i` becomes `4`, but **only** in the `f(3)` call. The other 2 "versions" of `i` are unaffected because they are in different scopes.
+
+### Breaking problems down
+
+ Where recursion shines is when  we use it to break down a problem into "subproblems", whose solutions  can then be combined to solve the original problem.
+
+Let's look at the [Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number). The Fibonacci numbers are a sequence of numbers starting with `0, 1`. Then, each number is defined as the sum of the previous two numbers. The first few Fibonacci numbers are `0, 1, 1, 2, 3, 5, 8`. More formally, we have
+
+Fn=Fn−1+Fn−2
+
+This is called a **recurrence relation** - it's an equation that connects the terms together.
+
+Let's use javascript code to write a function `F(n)` that returns the nth Fibonacci number (0 indexed). Don't forget we need base cases with any  recursive function. In this case the base cases are explicitly defined: `F(0) = 0` and `F(1) = 1`.
+
+```js
+function F(n) {
+  if (n <= 1) return n;
+  let oneBack = F(n - 1);
+  let twoBack = F(n - 2);
+  return oneBack + twoBack;
+}
+```
+
+Let's say that we wanted to find `F(3)`. Upon calling `F(3)`, we would see the following flow, with each indentation level representing a function call's scope:
+
+```
+oneBack = F(2)
+    oneBack = F(1)
+        F(1) = 1
+    twoBack = F(0)
+        F(0) = 0
+    F(2) = oneBack + twoBack = 1
+twoBack = F(1)
+    F(1) = 1
+F(3) = oneBack + twoBack = 2
+```
+
+As you can see, we took the original problem `F(3)`, and broke it down into two smaller subproblems - `F(2)` and `F(1)`. By combining the recurrence relation and base cases, we can solve the  subproblems and use those solutions to solve the original problem.
+
+This is the most common use of recursion - we have our recursive function **return the answer to the problem we are trying to solve for a given input**. In this example, the problem we're trying to solve for a given input is "What is the nth Fibonacci number? As such, we designed our function to return a Fibonacci number, according to the input n. By determining the base cases and a recurrence relation, we can easily implement the function.
+
+By following this idea, solving the subproblems is easy - if we  wanted the 100th Fibonacci number, we know by definition that it is the  sum of the 99th and 98th Fibonacci number. On the function call to `F(100)`, we know that calling `F(99)` and `F(98)` will give us those numbers.
