@@ -91,7 +91,7 @@ Let's look at the [Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_nu
 
 Fn=Fn−1+Fn−2
 
-This is called a **recurrence relation** - it's an equation that connects the terms together.
+This is called a **recurrence relation**- it's an equation that connects the terms together.
 
 Let's use javascript code to write a function `F(n)` that returns the nth Fibonacci number (0 indexed). Don't forget we need base cases with any  recursive function. In this case the base cases are explicitly defined: `F(0) = 0` and `F(1) = 1`.
 
