@@ -27,3 +27,29 @@ Big O is a notation used to describe the computational complexity of  an algorit
 Time complexity: as the input size grows, how much longer does the algorithm take to complete?
 
 Space complexity: as the input size grows, how much more memory does the algorithm use?
+
+------
+
+### How complexity works
+
+Complexity is described by a function (math formula). What should the arguments to this function be?
+
+The arguments are variables defined by the programmer, but they  should represent values that change between different inputs, and these  values should affect the algorithm. For example, the most common  variable you'll see is n, which usually denotes the length of an input array or string. In the example above, we could say that nn is equal to the length of `nums`.
+
+Here, "the length of `nums`" is a value that changes between inputs, and it directly affects the algorithm. The longer `nums` is, the more elements we need to iterate through, and thus the longer our algorithm will take to complete.
+
+> Note that choosing the letter nn to denote this value is arbitrary. There is no requirement that we use nn, it's just that nn is the commonly accepted standard that everyone uses. If you wanted, you could use a banana (🍌) to represent the length of `nums`. The programmer is the one who decides which variables represent what values.
+
+In the context of LeetCode, there are some common assumptions that we make. When dealing with integers, the larger the integer, the more time operations like addition, multiplication, or printing will take. While  this **is** relevant in theory, we typically ignore this  fact because the difference is practically very small, and treat all  integers the same. If you are given an array of integers as an input,  the only variable you would use is nn to denote the length of the array. Technically, you *could* introduce another variable, let's say kk which denotes the average value of the integers in the array. However, nobody does this.
+
+When written, the function is wrapped by a capital O. Here are some example complexities:
+
+- O(n)O(n)
+- O(n2)O(n2)
+- O(2n)O(2n)
+- O(log⁡n)O(logn)
+- O(n⋅m)O(n⋅m)
+
+> You might be thinking, what is mm? Remember: we define the variables. As these are simply examples with no associated problem, mm could denote any arbitrary variable. For example, we could have a problem where the input is two arrays. nn could denote the length of one while mm denotes the length of the other.
+
+These functions represent the complexity. For example, you would say  "The time complexity of my algorithm is O(n)" or "The space complexity  of my algorithm is O(n^2)".
