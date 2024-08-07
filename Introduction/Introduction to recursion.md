@@ -33,16 +33,14 @@ However, this code is actually wrong.  The  function calls will never stop! Runn
 
 We need what is called a **base case** to make the recursion stop. Base cases are conditions at the start of recursive functions that terminate the calls.
 
-```
-function fn(i):
-    if i > 10:
-        return
-
-    print(i)
-    fn(i + 1)
-    return
-
-fn(1)
+```js
+function fn(i) {
+  if (i > 10) return;
+  console.log(i);
+  fn(i + 1);
+  return;
+}
+fn(1);
 ```
 
 > After we call `fn(10)`, we print `10` and call `fn(11)`. In the `fn(11)` call, we trigger the base case and return. So now we are back in the call to `fn(10)` and move to the next line, which is the return statement. This makes us return back to the `fn(9)` call and so on, until we eventually return from the `fn(1)` call and the algorithm terminates.
