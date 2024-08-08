@@ -42,4 +42,31 @@ Note -> We will want to keep a reference to the head because the head is the onl
 1. There is no random access , if we have a large linked list and want to access the 150,000'th  element , then there usually isnt  a better way than to start at the head and iterate 150,000 times. So while an array has O(1) indexing m a linked list could require O(n) to access an element at a given position 
 2. Linked Lists have more overhead than array - every element need to have extra storage for the pointers 
 
+#### Traversal :-
+
+- Iterative approach 
+
+  ```js
+  let getSum = head => {
+      let ans = 0;
+      while (head) {
+          ans += head.val;
+          head = head.next;
+      }
   
+      return ans;
+  
+  }  
+  ```
+
+- Recursive approach 
+
+```js
+let getSum = head => {
+  if (!head) {
+      return 0;
+  }
+
+  return head.val + getSum(head.next);
+}
+```
