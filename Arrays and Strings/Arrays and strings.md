@@ -2,9 +2,11 @@
 
 Arrays and Strings represent an ordered group of elements
 
-Javascript uses dynamic arrays 
+Javascript uses dynamic arrays (An array cannot be resized .A dynamic array can be resized)
 
 Strings are immutable in javascript 
+
+Why should we care about something being mutable or immutable? If you have a mutable array `arr = ["a", "b", "c"]` and an immutable string `s = "abc"`, but you want to instead represent `"abd"`, you can easily do `arr[2] = "d"`, but you cannot do `s[2] = "d"`. As such, if you wanted the string `s = "abd"`, you would need to create it entirely from scratch
 
 Complexity of array and string operations:-
 
