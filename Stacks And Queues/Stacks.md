@@ -4,7 +4,7 @@
 
 **Answer**:A stack is an ordered collection of elements where elements are only added and removed from the same end .
 
-Example of stacks 
+Example of stack 
 
 1. Stack of plates in a kitchen 
 2. History of our current browsers tab 
